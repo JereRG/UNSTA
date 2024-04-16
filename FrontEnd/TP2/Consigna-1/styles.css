@@ -22,7 +22,6 @@ body {
     background-size: var(--gap) var(--gap);
     color: #dadada;
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
 }
 
 /* BOTON */

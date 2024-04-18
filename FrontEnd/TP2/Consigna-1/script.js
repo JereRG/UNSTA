@@ -77,15 +77,18 @@ function eliminarUltimoElemento() {
 
 // FUNCION PARA AGREGAR UN NUEVO ELEMENTO
 function agregarNuevoElemento() {
-    // Accedemos a la lista del archivo HTML
     var ul = document.getElementById("listaNumerosAleatorios");
 
-    var nuevoNumero = Math.floor(Math.random() * 100) + 1; // Generar un nuevo numero aleatorio
-    var li = document.createElement("li"); // Creamos una variable para la creacion de elementos li
-    li.textContent = nuevoNumero; // Asignamos el texto de cada li al numero "nuevo" random generado
-    ul.appendChild(li); // Generamos los elementos li dentro de la lista
+    // Verificar si ya hay 10 elementos en la lista
+    if (ul.children.length < 10) {
+        var nuevoNumero = Math.floor(Math.random() * 100) + 1; // Generar un nuevo numero aleatorio
+        var li = document.createElement("li"); // Crear un nuevo elemento li
+        li.textContent = nuevoNumero; // Asignar el texto de li al numero aleatorio generado
+        ul.appendChild(li); // Agregar el nuevo elemento li a la lista
+    } else {
+        alert("Ya se han agregado 10 elementos. No se pueden agregar más.");
+    }
 }
-
 // FUNCION PARA ORDENAR DE MENOR A MAYOR
 function ordenarArregloMenorMayor() {
     
@@ -181,6 +184,9 @@ function mostrarContenidoArreglo() {
         console.log("Posicion " + i + ": " + numeros[i]);
     }
 }
+
+
+
 
 
 

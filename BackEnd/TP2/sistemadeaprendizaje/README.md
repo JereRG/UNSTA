@@ -33,7 +33,7 @@ Este proyecto es una plataforma de aprendizaje en línea que se adapta a las nec
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/usuario/sistema-aprendizaje.git
+    git clone https://github.com/ereRG/UNSTA/edit/main/BackEnd/TP2/sistemadeaprendizaje.git
     ```
 2. Dirígete al directorio del proyecto:
     ```bash

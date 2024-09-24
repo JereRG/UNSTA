@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Plataforma de Bienestar</title>
+</head>
+<body>
+    <h1>Bienvenidos a la Plataforma de Bienestar</h1>
+
+    <!-- Catálogo de Servicios -->
+    <h2>Catálogo de Servicios</h2>
+    <ul>
+        <li th:each="servicio : ${servicios}">
+            <span th:text="${servicio.tipo}">Tipo de servicio</span> -
+            <span th:text="${servicio.duracion}">Duración</span>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,65 @@
+@startuml DiagramaClasesPlataformaBienestar
+
+class Instalacion {
+    String id
+    String nombre
+    String tipo
+    int capacidad
+}
+
+class Instructor {
+    String id
+    String nombre
+    String especialidad
+    List<String> disponibilidad
+}
+
+class Miembro {
+    String id
+    String nombre
+    String apellido
+    String email
+    List<String> progreso
+}
+
+class Pago {
+    String id
+    String miembroId
+    double monto
+    String fecha
+    String metodo
+}
+
+class Reserva {
+    String id
+    String miembroId
+    String servicioId
+    String fecha
+    String estado
+}
+
+class Servicio {
+    String id
+    String tipo
+    String duracion
+    String instructorId
+    String horario
+}
+
+class Suscripcion {
+    String id
+    String miembroId
+    String tipo
+    String estado
+    String fechaInicio
+    String fechaFin
+}
+
+Miembro "1" -- "0..*" Reserva
+Miembro "1" -- "0..1" Suscripcion
+Miembro "1" -- "0..*" Pago
+
+Instructor "1" -- "0..*" Servicio
+Servicio "1" -- "0..*" Reserva
+
+@enduml

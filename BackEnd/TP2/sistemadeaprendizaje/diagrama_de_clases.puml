@@ -1,0 +1,36 @@
+@startuml SistemaDeAprendizaje
+class Curso {
+    String id
+    String nombre
+    String descripcion
+    List<Modulo> modulos
+}
+
+class Modulo {
+    String id
+    String nombre
+    List<Leccion> lecciones
+}
+
+class Leccion {
+    String id
+    String titulo
+    String contenido
+}
+
+class Estudiante {
+    String id
+    String nombre
+    String apellido
+    List<String> rutasAprendizaje
+}
+
+class Instructor {
+    String id
+    String nombre
+    String especialidad
+}
+
+Curso "1" -- "0..*" Modulo
+Modulo "1" -- "0..*" Leccion
+@enduml

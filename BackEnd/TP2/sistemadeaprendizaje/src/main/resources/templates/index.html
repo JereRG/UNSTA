@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sistema de Aprendizaje</title>
+</head>
+<body>
+    <h1>Catálogo de Cursos</h1>
+    <ul>
+        <li th:each="curso : ${cursos}">
+            <h2 th:text="${curso.nombre}">Nombre del Curso</h2>
+            <ul>
+                <li th:each="modulo : ${curso.modulos}">
+                    <h3 th:text="${modulo.nombre}">Nombre del Módulo</h3>
+                    <ul>
+                        <li th:each="leccion : ${modulo.lecciones}">
+                            <span th:text="${leccion.nombre}">Lección</span>: <span th:text="${leccion.contenido}">Contenido</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
